@@ -28,7 +28,6 @@ object PokemonRepository {
         var pokemon: Pokemon
         repeat(151) { index ->
             pokemon = getPokemon(index + 1)
-            pokemon.name = pokemon.name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
             listPokemon.add(pokemon)
         }
         val pokedex = Pokedex()

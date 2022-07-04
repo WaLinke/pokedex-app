@@ -44,11 +44,12 @@
             app:imageUrl="@{pokemon.img}"
             tools:src="@tools:sample/backgrounds/scenic" />
 
+            <!--android:text="@{pokemon.types[0].type.typeName}"-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{pokemon.types[0].type.typeName}"
+            android:text="@{pokemon.formattedName}"
             android:textSize="18sp"
             tools:text="Bulbizarre"
             android:letterSpacing="0.1"/>
