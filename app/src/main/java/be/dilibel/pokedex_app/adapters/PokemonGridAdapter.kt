@@ -17,6 +17,7 @@ import be.dilibel.pokedex_app.R
 import be.dilibel.pokedex_app.databinding.PokemonCardItemBinding
 import be.dilibel.pokedex_app.entities.Pokemon
 import be.dilibel.pokedex_app.fragments.PokedexFragment
+import be.dilibel.pokedex_app.utils.PokemonUtils
 import be.dilibel.pokedex_app.viewmodels.PokedexViewModel
 
 
@@ -54,6 +55,12 @@ class PokemonGridAdapter(private val onClickListener: OnClickListener) :
 
     override fun onBindViewHolder(holder: PokemonImageViewHolder, position: Int) {
         val pokemon = getItem(position)
+        if(pokemon.types.size > 1) {
+            PokemonUtils.getTypeIcon(pokemon.types[0].type.typeName)
+            PokemonUtils.getTypeIcon(pokemon.types[1].type.typeName)
+        } else {
+            PokemonUtils.getTypeIcon(pokemon.types[0].type.typeName)
+        }
         holder.itemView.setOnClickListener {
             onClickListener.onClick(pokemon)
         }

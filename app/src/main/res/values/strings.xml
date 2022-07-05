@@ -2,4 +2,9 @@
     <string name="app_name">Pokedex App</string>
     <string name="pokemon_item_content_description">pokemon_item</string>
     <string name="current_pokemon">Current Pokemon</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="type">Type</string>
+    <string name="image_1">image_1</string>
+    <string name="image_2">image_2</string>
 </resources>

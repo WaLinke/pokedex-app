@@ -34,7 +34,7 @@ class PokedexFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentPokedexBinding.inflate(inflater)
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
         binding.photosGrid.adapter = PokemonGridAdapter(PokemonGridAdapter.OnClickListener { pokemon ->
             viewModel.setCurrentPokemon(pokemon)

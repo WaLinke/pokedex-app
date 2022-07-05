@@ -26,7 +26,7 @@ object PokemonRepository {
     suspend fun getPokedex(): Pokedex {
         val listPokemon = mutableListOf<Pokemon>()
         var pokemon: Pokemon
-        repeat(151) { index ->
+        repeat(898) { index ->
             pokemon = getPokemon(index + 1)
             listPokemon.add(pokemon)
         }

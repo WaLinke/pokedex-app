@@ -36,8 +36,9 @@ class PokedexViewModel : ViewModel() {
             } catch (e: Exception) {
                 _pokedex.value = null
                 _status.value = PokemonApiStatus.ERROR
+                Log.e("EXCEPTION", e.toString())
             }
-            Log.e("API_REQUEST", _status.toString())
+            Log.e("API_REQUEST", _status.value.toString())
         }
     }
 
