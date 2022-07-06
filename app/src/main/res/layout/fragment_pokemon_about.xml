@@ -15,6 +15,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        android:background="@drawable/tablayout_rounded_corner"
         tools:context="be.dilibel.pokedex_app.MainActivity.PokemonAboutFragment" >
 
         <LinearLayout

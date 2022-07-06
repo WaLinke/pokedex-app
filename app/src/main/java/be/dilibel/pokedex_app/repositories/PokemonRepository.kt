@@ -2,6 +2,7 @@ package be.dilibel.pokedex_app.repositories
 
 import be.dilibel.pokedex_app.entities.Pokedex
 import be.dilibel.pokedex_app.entities.Pokemon
+import be.dilibel.pokedex_app.entities.PokemonDescription
 import be.dilibel.pokedex_app.network.PokemonService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -37,5 +38,9 @@ object PokemonRepository {
 
     suspend fun getPokemon(id: Int): Pokemon {
         return retrofitService.getPokemon(id)
+    }
+
+    suspend fun getPokemonDescription(id: Int): PokemonDescription {
+        return retrofitService.getPokemonDescription(id)
     }
 }

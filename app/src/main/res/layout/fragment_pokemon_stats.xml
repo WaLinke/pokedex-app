@@ -15,6 +15,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/tablayout_rounded_corner"
+        android:paddingTop="20dp"
         tools:context="be.dilibel.pokedex_app.MainActivity.PokemonStatsFragment" >
 
 
@@ -41,7 +43,7 @@
                     android:layout_weight="1"
                     android:text="HP"
                     android:textAlignment="textEnd"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ProgressBar
@@ -73,7 +75,7 @@
                     android:layout_weight="1"
                     android:text="Attack"
                     android:textAlignment="textEnd"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ProgressBar
@@ -105,7 +107,7 @@
                     android:layout_weight="1"
                     android:text="@string/defense"
                     android:textAlignment="textEnd"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ProgressBar
@@ -137,7 +139,7 @@
                     android:layout_weight="1"
                     android:text="@string/special_attack"
                     android:textAlignment="textEnd"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ProgressBar
@@ -169,7 +171,7 @@
                     android:layout_weight="1"
                     android:text="@string/special_defense"
                     android:textAlignment="textEnd"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ProgressBar
@@ -201,7 +203,7 @@
                     android:layout_weight="1"
                     android:text="@string/speed"
                     android:textAlignment="textEnd"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ProgressBar

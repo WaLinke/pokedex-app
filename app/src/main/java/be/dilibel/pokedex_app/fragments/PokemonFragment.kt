@@ -38,11 +38,12 @@ class PokemonFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        viewModel.currentPokemon.value?.let { viewModel.getPokemonDescription(it.id) }
         val tabLayout: TabLayout = view.findViewById(R.id.pokemonTabLayout)
         val viewPager: ViewPager2 = view.findViewById(R.id.pokemonViewPager)
+        viewPager.isUserInputEnabled = false
         viewPager.adapter = PokemonTabAdapter(this)
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+        TabLayoutMediator(tabLayout, viewPager,true,false) { tab, position ->
             tab.text = when(position) {
                 0 -> "About"
                 1 -> "Stats"
