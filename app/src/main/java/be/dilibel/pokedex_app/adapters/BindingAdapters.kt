@@ -1,13 +1,11 @@
 package be.dilibel.pokedex_app.adapters
 
-import android.view.View
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import be.dilibel.pokedex_app.entities.Pokemon
-import be.dilibel.pokedex_app.viewmodels.PokemonApiStatus
 import be.dilibel.pokedex_app.R
 
 @BindingAdapter("listData")

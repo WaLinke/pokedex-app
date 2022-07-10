@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import be.dilibel.pokedex_app.R
 import be.dilibel.pokedex_app.adapters.PokemonTabAdapter
 import be.dilibel.pokedex_app.databinding.FragmentPokemonBinding
-import be.dilibel.pokedex_app.utils.PokemonUtils
 import be.dilibel.pokedex_app.viewmodels.PokedexViewModel
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -51,5 +51,11 @@ class PokemonFragment : Fragment() {
                 else -> throw Resources.NotFoundException("Position not found")
             }
         }.attach()
+        val leftArrow: ImageView = view.findViewById(R.id.leftArrow)
+        leftArrow.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
     }
+
 }
