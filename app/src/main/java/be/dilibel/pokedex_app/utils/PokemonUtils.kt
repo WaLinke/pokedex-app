@@ -1,7 +1,20 @@
 package be.dilibel.pokedex_app.utils
 
+import android.content.Context
+import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.graphics.PorterDuff
 import android.util.Log
+import android.view.View
+import android.widget.TextView
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.graphics.BlendModeColorFilterCompat
+import androidx.core.graphics.BlendModeCompat
+import androidx.core.graphics.drawable.DrawableCompat
+import androidx.palette.graphics.Palette
 import be.dilibel.pokedex_app.R
+import java.net.URL
+
 
 class PokemonUtils {
     companion object {
@@ -32,6 +45,20 @@ class PokemonUtils {
                 }
             }
             return typeIcon
+        }
+        fun setPokemonDominantColor(imageUrl: String, view: View, context: Context?) {
+            try {
+                val url = URL(imageUrl)
+                val image = BitmapFactory.decodeStream(url.openStream())
+                Palette.from(image).generate { palette: Palette? ->
+                    val vibrant = palette?.dominantSwatch
+                    val textView: TextView = view.findViewById(R.id.pokemonDescription) as TextView
+                    if (vibrant != null) {
+                        textView.getBackground().colorFilter =
+                            BlendModeColorFilterCompat.createBlendModeColorFilterCompat(vibrant.rgb, BlendModeCompat.SRC_ATOP)
+                    };
+                }
+            } catch (e: Exception) {}
         }
     }
 }

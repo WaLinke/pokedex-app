@@ -28,9 +28,7 @@ data class PokemonTypes(
 data class PokemonStats(
         @Json(name = "base_stat") val baseStat: Int,
         @Json(name = "stat") val stat: PokemonStat
-) {
-        val formattedBaseStat = baseStat.toString()
-}
+)
 
 data class PokemonStat(
         @Json(name = "name") val name: String
