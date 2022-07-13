@@ -46,7 +46,7 @@ class PokemonUtils {
             }
             return typeIcon
         }
-        fun setPokemonDominantColor(imageUrl: String, view: View, context: Context?) {
+        fun setPokemonDominantColor(imageUrl: String, view: View) {
             try {
                 val url = URL(imageUrl)
                 val image = BitmapFactory.decodeStream(url.openStream())

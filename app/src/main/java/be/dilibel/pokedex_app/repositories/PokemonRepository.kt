@@ -22,7 +22,7 @@ object PokemonRepository {
         .baseUrl(BASE_URL)
         .build()
 
-    val retrofitService: PokemonService = retrofit.create(PokemonService::class.java)
+    val pokemonService: PokemonService = retrofit.create(PokemonService::class.java)
 
     suspend fun getPokedex(): Pokedex {
         val listPokemon = mutableListOf<Pokemon>()
@@ -37,10 +37,10 @@ object PokemonRepository {
     }
 
     suspend fun getPokemon(id: Int): Pokemon {
-        return retrofitService.getPokemon(id)
+        return pokemonService.getPokemon(id)
     }
 
     suspend fun getPokemonDescription(id: Int): PokemonDescription {
-        return retrofitService.getPokemonDescription(id)
+        return pokemonService.getPokemonDescription(id)
     }
 }

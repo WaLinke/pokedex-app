@@ -49,6 +49,11 @@ class PokemonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.currentPokemon.value?.let { viewModel.getPokemonDescription(it.id) }
+
+        lifecycleScope.launch(Dispatchers.IO) {
+            viewModel.currentPokemon.value?.img?.let { PokemonUtils.setPokemonDominantColor(it, view) }
+        }
+
         val tabLayout: TabLayout = view.findViewById(R.id.pokemonTabLayout)
         val viewPager: ViewPager2 = view.findViewById(R.id.pokemonViewPager)
         viewPager.isUserInputEnabled = false
@@ -64,10 +69,6 @@ class PokemonFragment : Fragment() {
         val leftArrow: ImageView = view.findViewById(R.id.leftArrow)
         leftArrow.setOnClickListener {
             findNavController().navigateUp()
-
-        }
-        lifecycleScope.launch(Dispatchers.IO) {
-            viewModel.currentPokemon.value?.img?.let { PokemonUtils.setPokemonDominantColor(it, view, context) }
         }
     }
 

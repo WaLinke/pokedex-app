@@ -9,6 +9,7 @@ import be.dilibel.pokedex_app.entities.Pokedex
 import be.dilibel.pokedex_app.entities.Pokemon
 import be.dilibel.pokedex_app.entities.PokemonDescription
 import be.dilibel.pokedex_app.repositories.PokemonRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 enum class PokemonApiStatus { LOADING, ERROR, DONE }
@@ -20,7 +21,7 @@ class PokedexViewModel : ViewModel() {
     private val _pokedex = MutableLiveData<Pokedex?>()
     val pokedex: LiveData<Pokedex?> = _pokedex
 
-    private val _currentPokemon = MutableLiveData<Pokemon?>()
+    private val _currentPokemon = MutableLiveData<Pokemon>()
     val currentPokemon: LiveData<Pokemon?> = _currentPokemon
 
     private val _description = MutableLiveData<PokemonDescription?>()
@@ -29,7 +30,6 @@ class PokedexViewModel : ViewModel() {
 
     init {
         getPokedex()
-        _currentPokemon.value = null
     }
 
     private fun getPokedex() {
